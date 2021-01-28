@@ -71,6 +71,17 @@
             text-transform: uppercase;
         }
 
+        .flip-horizontal {
+            -moz-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            transform: scaleX(-1);
+            -ms-filter: fliph;
+            /*IE*/
+            filter: fliph;
+            /*IE*/
+        }
+
         .btn_control {
             display: none;
             font-size: 80px;
@@ -541,8 +552,13 @@
 
             if (car_pos == 0) {
                 car_way -= car_width / 1.2;
+
+                $('#car').addClass('flip-horizontal');
+
             } else if (car_pos == 1) {
                 car_way += car_width / 2;
+
+                $('#car').removeClass('flip-horizontal');
             }
 
             $('#car').css('margin-left', car_way + 'px');
@@ -773,6 +789,7 @@
 
 
             updateCar();
+            moveRight();
 
             //startGame();
 
