@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>🔥🔥🔥 Juego - Pico de oro - El camino del Natty 🔥🔥🔥 #picovideojuego</title>
+    <title>🔥🔥🔥 Juego - Pico de oro - El camino del Natty 🔥🔥🔥 #picochuzado</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
@@ -365,8 +365,8 @@
     </audio>
 
 
-    <audio id="bg_music2" loop>
-        <source src="static/music2.mp3?1" type="audio/mp3">
+    <audio id="bg_music2">
+        <source src="static/music2.mp3?2" type="audio/mp3">
     </audio>
 
 
@@ -711,8 +711,8 @@
 
 
                 if (enemy_pos) {
-                    enemy_start = screen_width;
-                    enemy_end = '-=' + ((screen_width / 2) - 20);
+                    enemy_start = screen_width - 70;
+                    enemy_end = '-=' + ((screen_width / 2) - 90);
                 } else {
                     enemy_start = 0;
                     enemy_end = '+=' + ((screen_width / 2) + 70);
