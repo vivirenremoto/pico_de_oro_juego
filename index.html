@@ -556,17 +556,27 @@
 
         function updateCar() {
             var car_way = -75;
+            var car_diff = 0;
 
             if (car_pos == 0) {
                 car_way -= car_width / 1.2;
+                car_diff = (car_width / 2) * -1;
 
                 $('#car').addClass('flip-horizontal');
 
             } else if (car_pos == 1) {
                 car_way += car_width / 2;
+                car_diff = (car_width / 2);
 
                 $('#car').removeClass('flip-horizontal');
             }
+
+
+
+            if (screen_width >= 800) {
+                car_way += car_diff;
+            }
+
 
             $('#car').css('margin-left', car_way + 'px');
         }
