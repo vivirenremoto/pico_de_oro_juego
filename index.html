@@ -346,43 +346,70 @@
 
     <div id="result_winner">
 
+        <a href="https://twitter.com/vivirenremoto" target="_blank"
+            style="font-size:30px;position:fixed;right:10px;top:10px;z-index:2;color:white;text-decoration:none;">by
+            @vivirenremoto</a>
+
         <h2 style="color:#00ff00">100% NATTY</h2>
         <h3>PADRE ZORRO ESTÁ ORGULLOSO</h3>
         <br>
         <img src="static/good2.png">
-        <br><br>
+        <br>
 
         <button onclick="location.reload();">¿Repetir?</button>
         <button onclick="share()">Compartir</button>
 
-        <button onclick="window.open('https://www.buymeacoffee.com/vivirenremoto')">Apoyar</button>
+        <!--button onclick="window.open('https://www.buymeacoffee.com/vivirenremoto')">Apoyar</button>-->
 
         <br><br>
         <a href="http://bit.ly/picopromojuego" target="_blank" class="cupon"
             style="text-decoration:none;display:none;padding:15px;background:orange;position:fixed;left:0;right:0;bottom:0;font-size:25px;text-align:center;color:white;">
             Has conseguido el
             coupón "CALVO15" para un descuento de 15% en <u>potentialnutrition.com</u></a>
+
+
+        <a href="https://vivirenremoto.github.io/pico_de_oro_juego/" class="not_cupon"
+            style="text-decoration:none;display:none;padding:15px;background:red;position:fixed;left:0;right:0;bottom:0;font-size:25px;text-align:center;color:white;">
+            ¿Sabías que hay un cupón oculto en el juego? Repite la partida a ver si lo encuentras :)
+
+
+        </a>
+
     </div>
 
     <div id="result_loser">
+
+        <a href="https://twitter.com/vivirenremoto" target="_blank"
+            style="font-size:30px;position:fixed;right:10px;top:10px;z-index:2;color:white;text-decoration:none;">by
+            @vivirenremoto</a>
+
         <h2 style="color:red">CHUZADO</h2>
         <h3>TE HAS DEJADO LLEVAR POR EL CAMINO DE LAS GOMINOLAS</h3>
         <br>
         <img src="static/bad2.png?v1">
-        <br><br>
+        <br>
 
 
         <button onclick="location.reload();">¿Repetir?</button>
         <button onclick="share()">Compartir</button>
 
-        <button onclick="window.open('https://www.buymeacoffee.com/vivirenremoto')">Apoyar</button>
+        <!--button onclick="window.open('https://www.buymeacoffee.com/vivirenremoto')">Apoyar</button>-->
 
 
         <br><br>
-        <a href="https://potentialnutrition.com/" target="_blank" class="cupon"
+        <a href="http://bit.ly/picopromojuego" target="_blank" class="cupon"
             style="text-decoration:none;display:none;padding:15px;background:orange;position:fixed;left:0;right:0;bottom:0;font-size:25px;text-align:center;color:white;">
             Has conseguido el
             coupón "CALVO15" para un descuento de 15% en <u>potentialnutrition.com</u></a>
+
+
+        <a href="https://vivirenremoto.github.io/pico_de_oro_juego/" class="not_cupon"
+            style="text-decoration:none;display:none;padding:15px;background:red;position:fixed;left:0;right:0;bottom:0;font-size:25px;text-align:center;color:white;">
+            ¿Sabías que hay un cupón oculto en el juego? Repite la partida a ver si lo encuentras :)</a>
+
+
+
+
 
     </div>
 
@@ -686,7 +713,7 @@
         }
 
         function share() {
-            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + '&tw_p=tweetbutton&url=' + document.location.href);
+            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + '&tw_p=tweetbutton&url=' + encodeURIComponent('https://bit.ly/picojuego')); // document.location.href
 
         }
 
@@ -695,6 +722,11 @@
             music1.play();
 
             $('#game').hide();
+
+
+            if ($('.cupon').css('display') == 'none') {
+                $('.not_cupon').show();
+            }
 
             if (score >= 100) {
                 $('#result_winner').show();
