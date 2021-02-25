@@ -445,6 +445,7 @@
         var timer_game;
         var screen_height = $(document).height();
         var screen_width = $(document).width();
+        var screen_width_half = screen_width / 2;
         var screen_height_half = (screen_height / 2);
         var screen_height_half_half = (screen_height / 4) * 2;
         var start_round = false;
@@ -837,9 +838,17 @@
 
         $(function () {
 
-            $("body").click(function () {
-                //playMusic1();
-            });
+            if (screen_width > 800) {
+                $("body").click(function (e) {
+                    //playMusic1();
+
+                    if (screen_width_half < e.pageX) {
+                        moveRight();
+                    } else {
+                        moveLeft();
+                    }
+                });
+            }
 
             $("body").keydown(function (e) {
                 if (e.keyCode == 37) {
